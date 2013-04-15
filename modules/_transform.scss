@@ -17,3 +17,11 @@
        -o-transform-origin: $axes;
           transform-origin: $axes;
 }
+
+@mixin backface-visibility($visibility: hidden) {
+//  none | <visibility>
+  -webkit-backface-visibility: $visibility;
+     -moz-backface-visibility: $visibility;
+      -ms-backface-visibility: $visibility;
+          backface-visibility: $visibility;
+}
