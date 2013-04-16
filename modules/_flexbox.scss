@@ -121,7 +121,22 @@
 }
 }
 
-@mixin flexitem($order: 0, $grow: 0, $shrink: 1, $basis: auto, $align: auto) {
+@mixin flex( $grow: 0, $shrink: 1, $basis: auto ) {
+// <grow> - flex-grow (integer)
+// <shrink> - flex-shrink (integer)
+// <basis> - flex-basis (length)
+
+// @extend flex( 0, 1, auto );
+// @extend flex( 2, 1, 100px );
+
+  -webkit-box-flex: $grow;
+  -moz-box-flex: $grow;
+  -webkit-flex: $grow $shrink $basis;
+  -ms-flex: $grow $shrink $basis;
+  flex: $grow $shrink $basis;
+}
+
+@mixin flexitem( $order: 0, $grow: 0, $shrink: 1, $basis: auto, $align: auto ) {
 // <order> -(integer)
 // <grow> - flex-grow (integer)
 // <shrink> - flex-shrink (integer)
@@ -137,11 +152,9 @@
   -webkit-order: $order;
   -ms-flex-order: $order;
   order: $order;
-  -webkit-box-flex: $grow;
-  -moz-box-flex: $grow;
-  -webkit-flex: $grow $shrink $basis;
-  -ms-flex: $grow $shrink $basis;
-  flex: $grow $shrink $basis;
+
+  @include flex( $grow, $shrink, $basis );
+
   -webkit-align-self: $align;
   -ms-flex-item-align: $align;
   align-self: $align;
