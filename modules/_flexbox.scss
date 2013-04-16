@@ -12,7 +12,7 @@
 
   display: -webkit-box;
   display: -moz-box;
-  display: -ms-$displaybox;
+  display: -ms-#{$display}box;
   display: -webkit-$display;
   display: $display;
 
