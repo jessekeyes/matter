@@ -6,9 +6,9 @@
 // <items> - start | end | center | baseline | stretch
 // <content> - start | end | center | space-between | space-around | stretch
 
-// @extend flexbox( flex, row, wrap, start, start, start );
-// @extend flexbox( inline-flex, column, nowrap, center, start, stretch );
-// @extend flexbox( flex, row-reverse, wrap, center, start, center );
+// @include flexbox( flex, row, wrap, start, start, start );
+// @include flexbox( inline-flex, column, nowrap, center, start, stretch );
+// @include flexbox( flex, row-reverse, wrap, center, start, center );
 
   display: -webkit-box;
   display: -moz-box;
@@ -126,8 +126,8 @@
 // <shrink> - flex-shrink (integer)
 // <basis> - flex-basis (length)
 
-// @extend flex( 0, 1, auto );
-// @extend flex( 2, 1, 100px );
+// @include flex( 0, 1, auto );
+// @include flex( 2, 1, 100px );
 
   -webkit-box-flex: $grow;
   -moz-box-flex: $grow;
@@ -143,9 +143,9 @@
 // <basis> - flex-basis (length)
 // <align> - start | end | center | space-between | space-around | stretch
 
-// @extend flexitem( 0, 0, 1, auto, start );
-// @extend flexitem( 1, 1, 1, 100px, stretch );
-// @extend flexitem( 0, 2, 1, auto, center );
+// @include flexitem( 0, 0, 1, auto, start );
+// @include flexitem( 1, 1, 1, 100px, stretch );
+// @include flexitem( 0, 2, 1, auto, center );
 
   -webkit-box-ordinal-group: $order + 1;
   -moz-box-ordinal-group: $order + 1;
