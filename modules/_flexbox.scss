@@ -10,10 +10,12 @@
 // @include flexbox( inline-flex, column, nowrap, center, start, stretch );
 // @include flexbox( flex, row-reverse, wrap, center, start, center );
 
+  @extend %mozbox;
+
   display: -webkit-box;
   display: -moz-box;
   display: -ms-#{$display}box;
-  display: -webkit-$display;
+  display: -webkit-#{$display};
   display: $display;
 
 @if $direction == row {
@@ -49,15 +51,15 @@
 @if $justify == start {
   -webkit-box-pack: $justify;
   -moz-box-pack: $justify;
-  -webkit-justify-content: flex-$justify;
+  -webkit-justify-content: flex-#{$justify};
   -ms-flex-pack: $justify;
-  justify-content: flex-$justify;
+  justify-content: flex-#{$justify};
 } @else if $justify == end {
   -webkit-box-pack: $justify;
   -moz-box-pack: $justify;
-  -webkit-justify-content: flex-$justify;
+  -webkit-justify-content: flex-#{$justify};
   -ms-flex-pack: $justify;
-  justify-content: flex-$justify;
+  justify-content: flex-#{$justify};
 } @else if $justify == space-between {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
@@ -81,15 +83,15 @@
 @if $items == start {
   -webkit-box-align: $items;
   -moz-box-align: $items;
-  -webkit-align-items: flex-$items;
+  -webkit-align-items: flex-#{$items};
   -ms-flex-align: $items;
-  align-items: flex-$items;
+  align-items: flex-#{$items};
 } @else if $items == end {
   -webkit-box-align: $items;
   -moz-box-align: $items;
-  -webkit-align-items: flex-$items;
+  -webkit-align-items: flex-#{$items};
   -ms-flex-align: $items;
-  align-items: flex-$items;
+  align-items: flex-#{$items};
 } @else {
   -webkit-box-align: $items;
   -moz-box-align: $items;
@@ -99,13 +101,13 @@
 }
 
 @if $content == start {
-  -webkit-align-content: flex-$content;
+  -webkit-align-content: flex-#{$content};
   -ms-flex-line-pack: $content;
-  align-content: flex-$content;
+  align-content: flex-#{$content};
 } @else if $content == end {
-  -webkit-align-content: flex-$content;
+  -webkit-align-content: flex-#{$content};
   -ms-flex-line-pack: $content;
-  align-content: flex-$content;
+  align-content: flex-#{$content};
 } @else if $content == space-between {
   -webkit-align-content: $content;
   -ms-flex-line-pack: justify;
