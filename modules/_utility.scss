@@ -82,6 +82,13 @@
 }
 
 
+// Make elements appear clickable
+
+%clickable {
+    cursor: pointer;
+}
+
+
 // Helper class to fix some Mozilla Flexbox issues. See _flexbox.scss
 
 @-moz-document url-prefix() {
