@@ -1,7 +1,6 @@
 {
   "name": "matter",
   "version": "0.0.1",
-  "main": "matter.scss",
   "ignore": [],
   "dependencies": {},
   "devDependencies": {}
