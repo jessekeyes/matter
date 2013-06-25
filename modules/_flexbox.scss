@@ -10,7 +10,10 @@
 // @include flexbox( inline-flex, column, nowrap, center, start, stretch );
 // @include flexbox( flex, row-reverse, wrap, center, start, center );
 
-  @extend %mozbox;
+@-moz-document url-prefix() {
+  width: 100%;
+  -moz-box-sizing: border-box;
+}
 
   display: -webkit-box;
   display: -moz-box;
