@@ -1,0 +1,35 @@
+/**
+ * Forms
+ */
+
+input[type=search],
+input[type=text],
+input[type=password],
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=search] {
+  @include pad( 8px 10px );
+  
+  border: 0;
+}
+
+input[type=checkbox],
+input[type=radio] {
+  margin-right: 10px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=url],
+select {
+
+}
+

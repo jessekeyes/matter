@@ -1,0 +1,14 @@
+/**
+* <%= themeName %>
+* <%= themeURI %>
+*
+* Copyright (c) 2015 <%= themeAuthor %>
+*/
+
+@import "global/global";
+
+@import "base/base";
+
+@import "layout/layout";
+
+@import "components/components";

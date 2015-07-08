@@ -1,0 +1,12 @@
+/**
+* <%= themeName %>
+* <%= themeURI %>
+*
+* Copyright (c) 2015 <%= themeAuthor %>
+*/
+
+@import "global/mixins";
+@import "global/vars";
+
+@import "base/font-face.scss";
+@import "base/typography.scss";

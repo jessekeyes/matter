@@ -1,0 +1,30 @@
+{
+  "name": "generator-matter",
+  "version": "0.1.0",
+  "description": "A WordPress theme Yeoman generator. Inspired by _s.",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "license": "GPL-2.0",
+  "main": "app/index.js",
+  "repository": "oknoway/matter",
+  "author": {
+    "name": "Nate Bedortha",
+    "email": "nate@oknoway.com",
+    "url": "https://github.com/oknoway"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "yeoman-generator": "^0.20.1",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

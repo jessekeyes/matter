@@ -1,0 +1,24 @@
+{
+  "name": "<%= themeNameSpace %>",
+  "title": "<%= themeName %>",
+  "description": "<%= themeDescription %>",
+  "version": "0.1.0",
+  "homepage": "<%= themeURI %>",
+  "license": "GPL-2.0",
+  "author": {
+    "name": "<%= themeAuthorName %>",
+    "email": "<%= themeAuthorEmail %>",
+    "url": "<%= themeAuthorURI %>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<%= repoURL %>"
+  },
+  "bugs": {
+    "url": "<%= issuesURL %>"
+  },
+  "scripts": {
+    "start": "grunt"
+  },
+  "dependencies": {}
+}
