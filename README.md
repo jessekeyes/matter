@@ -45,14 +45,14 @@ This is a great time to add any custom post types and taxonomies. If you install
 
 
 ## TODO
--Prompts for:
---Post Types
---Taxonomies
---Sidebars
---Widgets
---Nav Menus
--SubGenerators
---neato
+* Prompts for:
+  * Post Types
+  * Taxonomies
+  * Sidebars
+  * Widgets
+  * Nav Menus
+* SubGenerators
+  * neato
 
 
 ## License
