@@ -3,7 +3,7 @@
  *  Register Sidebars.
  *
  * @package WordPress
- * @subpackage <%= themeName %>
+ * @subpackage <%= themeNameSpace %> Music News
  */
 
 

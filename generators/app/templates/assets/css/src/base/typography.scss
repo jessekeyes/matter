@@ -2,9 +2,16 @@
  * Typography
  */
 
-body {
-  //@include Gotham;
+html { font-size: 100%; }
+
+body,
+button,
+input,
+select,
+textarea {
+  color: copy( text-main );
   
+  //@include Gotham;
   font-size: $base-font-size;
   line-height: $base-line-height;
 }

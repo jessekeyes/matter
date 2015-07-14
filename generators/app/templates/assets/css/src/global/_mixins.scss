@@ -58,6 +58,12 @@
   @return null;
 }
 
+// Center Block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 // Antialias fonts
 @mixin antialias {
@@ -123,21 +129,15 @@
 }
 
 
-// Clearfix: contain floats
-@mixin clearfix {
+// Clearfix
+@mixin clearfix() {
+  content: '';
+  display: table;
+}
 
-  .lt-ie8 & {
-    *zoom: 1;
-  }
-
-  &:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-  }
-
-  &:after {
-    clear: both;
-  }
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+  clear: both;
 }
 
 
@@ -205,8 +205,4 @@
       width: 33%;
     }
   }
-  
-  li { margin: 0 0 0.75em; }
-  
-  a { color: $blueBG; }
 }

@@ -47,14 +47,14 @@ module.exports = yeoman.generators.Base.extend({
     }, {
       type: 'input',
       name: 'themeNameSpace',
-      message: 'Enter a unique name-space for your theme. It should be alphanumeric and all lowercase. I like to use the project’s domain name.',
+      message: 'Enter a unique name-space for your theme. It should be alphanumeric and all lowercase.',
       default: function( answers ) {
         return answers.themeName.replace( /\W/g, '' ).toLowerCase();
       }
     }, {
       type: 'input',
       name: 'themeURI',
-      message: 'Enter the new theme’s URL.',
+      message: 'Enter the project’s final, production URL.',
       default: function( answers ) {
         return 'http://www.' + answers.themeNameSpace + '.com';
       }
@@ -197,89 +197,6 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   writing: {
-    /*
-    app: function () {
-
-      this.fs.copyTpl(
-        this.templatePath( '_package.json' ),
-        this.destinationPath( 'package.json' ),
-        {
-          themeAuthorName: this.props.themeAuthorName,
-          themeAuthor: this.props.themeAuthor,
-          themeAuthorEmail: this.props.themeAuthorEmail,
-          themeAuthorURI: this.props.themeAuthorURI,
-          themeName: this.props.themeName,
-          themeNameSpace: this.props.themeNameSpace,
-          themeURI: this.props.themeURI,
-          themeDescription: this.props.themeDescription,
-          repoURL: this.props.repoURL,
-          issuesURL: this.props.issuesURL
-        }
-      );
-      this.fs.copyTpl(
-        this.templatePath( '_bower.json' ),
-        this.destinationPath( 'bower.json' ),
-        {
-          themeAuthorName: this.props.themeAuthorName,
-          themeAuthor: this.props.themeAuthor,
-          themeAuthorEmail: this.props.themeAuthorEmail,
-          themeAuthorURI: this.props.themeAuthorURI,
-          themeName: this.props.themeName,
-          themeNameSpace: this.props.themeNameSpace,
-          themeURI: this.props.themeURI,
-          themeDescription: this.props.themeDescription,
-          repoURL: this.props.repoURL,
-          issuesURL: this.props.issuesURL
-        }
-      );
-    },
-
-    projectfiles: function () {
-      this.fs.copy(
-        this.templatePath( '_gitignore' ),
-        this.destinationPath( '.gitignore' )
-      );
-      this.fs.copy(
-        this.templatePath( 'scss-lint.yml' ),
-        this.destinationPath( '.scss-lint.yml' )
-      );
-      this.fs.copy(
-        this.templatePath( 'jshintrc' ),
-        this.destinationPath( '.jshintrc' )
-      );
-      this.fs.copy(
-        this.templatePath( 'README.md' ),
-        this.destinationPath( 'README.md' )
-      );
-    },
-    
-    buildFiles: function () {
-      this.fs.copy(
-        this.templatePath( 'Gruntfile.js' ),
-        this.destinationPath( 'Gruntfile.js' )
-      );
-      this.fs.copyTpl(
-        this.templatePath( 'build/*.js' ),
-        this.destinationPath( 'build' ),
-        {
-          themeAuthorName: this.props.themeAuthorName,
-          themeAuthor: this.props.themeAuthor,
-          themeAuthorEmail: this.props.themeAuthorEmail,
-          themeAuthorURI: this.props.themeAuthorURI,
-          themeName: this.props.themeName,
-          themeNameSpace: this.props.themeNameSpace,
-          themeURI: this.props.themeURI,
-          themeDescription: this.props.themeDescription,
-          localDomain: this.props.localDomain,
-          repoURL: this.props.repoURL,
-          issuesURL: this.props.issuesURL
-        }
-      );
-    },
-    
-    themeAssets: function () {
-    },
-    */
     allFiles: function () {
       this.fs.copyTpl(
         this.templatePath( '**/*' ),
@@ -303,30 +220,37 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath( '_gitignore' ),
         this.destinationPath( '.gitignore' )
       );
+      
       this.fs.move(
         this.destinationPath( 'scss-lint.yml' ),
         this.destinationPath( '.scss-lint.yml' )
       );
+      
       this.fs.move(
         this.destinationPath( 'jshintrc' ),
         this.destinationPath( '.jshintrc' )
       );
+      
       this.fs.move(
         this.destinationPath( 'README.md' ),
         this.destinationPath( 'README.md' )
       );
+      
       this.fs.move(
         this.destinationPath( '_package.json' ),
         this.destinationPath( 'package.json' )
       );
+      
       this.fs.move(
         this.destinationPath( '_bower.json' ),
         this.destinationPath( 'bower.json' )
       );
+      
       this.fs.move(
         this.destinationPath( 'assets/css/src/theme.scss' ),
         this.destinationPath( 'assets/css/src/' + this.props.themeNameSpace + '.scss' )
       );
+      
       this.fs.move(
         this.destinationPath( 'assets/js/src/theme/theme.js' ),
         this.destinationPath( 'assets/js/src/' + this.props.themeNameSpace + '/' + this.props.themeNameSpace + '.js' )

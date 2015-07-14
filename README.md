@@ -1,56 +1,59 @@
-# generator-matter
+# matter
+### A WordPress starter-theme generator for Yeoman.
 
-> [Yeoman](http://yeoman.io) generator
+_Inspired by:_
+* [_s](http://underscores.me)
+* [HTML5 Boilerplate](http://html5boilerplate.com)
+* [neato](http://github.com/jessekeyes/neato)
 
 
-## Getting Started
+## Build Requirements
+* [NodeJS](http://www.nodejs.org/)
+* [NPM](http://www.npmjs.com/)
+* [Grunt](http://gruntjs.com/)
+* [Bower](http://bower.io/)
+* [Yeoman](http://yeoman.io/)
+* [NodeSass](http://github.com/sass/node-sass)
+* [Browsersync](http://browsersync.io/)
 
-### What is Yeoman?
 
-Trick question. It's not a thing. It's this guy:
-
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
+## Installing
+Once you have NodeJS & NPM installed, all other requirements can be installed with:
 ```bash
 npm install -g bower browser-sync grunt-cli node-sass yo
 ```
 
-### Yeoman Generators
-
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
-
-To install generator-matter from npm, run:
-
+Then install the matter generator from NPM with:
 ```bash
-npm install -g generator-matter
+npm install -g https://github.com/substancedev/matter/tarball/master
 ```
 
-Finally, initiate the generator:
+
+## Generate your theme
+`cd` to your WordPress themes directory and initiate the generator:
 
 ```bash
 yo matter
 ```
 
-### Getting To Know Yeoman
+Once installation is finished, `cd` to your new theme directory and run `grunt`.
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
+## Post Types & Taxonomies
+This is a great time to add any custom post types and taxonomies. If you install [WP-CLI](http://wp-cli.org/), you can quickly generate post types and taxonomies with the following commands, answering `Y` to `--theme` and `n` to `--raw`:
+* Post Types: `wp scaffold post-type --prompt`
+* Taxonomies: `wp scaffold taxonomy --prompt`
 
 
 ## TODO
-
 -Prompts for:
 --Post Types
 --Taxonomies
 --Sidebars
 --Widgets
 --Nav Menus
+-SubGenerators
+--neato
+
 
 ## License
-
-MIT
+GPL2

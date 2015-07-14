@@ -1,67 +1,74 @@
-# Welcome to your theme's workflow guide!
-This guide will help you set up the proper (front end) development workflow using GruntJS, SASS, BowerJS and other NodeJS modules.
+# Welcome to your new theme!
+This guide will help you set up our preferred front-end development workflow using Grunt, Bower, SASS and Browsersync.
 
-## Requirements
-Likely, if you've generated this theme with the Yeoman generator, you already have these requirements:
-
-* [NodeJS](http://www.nodejs.org/download/)
-* [Bower](http://bower.io/#install-bower) `npm install -g bower`
-* [Yeoman](http://yeoman.io/) `npm install -g yo`
-* Install the Neato yeoman generator: `npm install -g https://github.com/jessekeyes/neato/tarball/master`
-* Run `npm install` if you haven't already.
-
-## Using Bower and grunt's initial task
-If you haven't already, you'll need to run Bower to install the necessary versions and dependencies used in your project.
-
-`grunt install`
-
-You may have to run this again if any new dependencies have been added by another developer. Currently, there is no way to automate this process other than direct communication.
-
-If you are the one adding a dependency to the project via bower, use the following command to automatically add it as a depencecy to the bower.json file:
-
-`bower install <package> --save`
-(be sure to run this in the same dir as the bower.json file; the theme's root)
-
-And then you should run `grunt install` again (see below).
-
-### Bower components
-Usually, bower components are stored in a folder (bower_components), but the grunt task will move these to a vendor/ dir. The main vendor dir is located `YourTheme/assets/vendor`.All bower components will be placed there when you run `grunt install`.
-
-If you're adding a new bower component and dependency to the project, you'll need to run the bower command above and then `grunt install` to move it.
-
-### Developing with SASS, Uglify via Grunt
-Currently this theme is set up with SASS CSS preprocessor (using node-sass!) and Uglify to process and minify JavaScript. Edit and add files in the `assets/src` dir which has the following layout:
-
-* `assets/src/scss` - All custom/project sass files should be used here.
-* `assets/src/css` - unminified generated CSS files here. _Do not edit any generated files here (usually main.css)_
-* `assets/src/js` - JS files needed for the project go and are edited here. Except for `admin` and `head`, all JS is concatinated and minified into `assets/js/app.js`
-* `assets/src/js/admin/` - All JS files here get concatinated into `assets/js/admin.js`
-* `assets/src/js/head/` - All JS files here get concatinated into `assets/js/head.js` and are exposed in the HTML <head> (the rest is usually set in the footer). See Modernizr, below.
-* `assets/src/js/vendor` - any JS plugins that _aren't_ managed by Bower should go here. They'll have to be referenced manually (via the WP enqueue function or other method).
-
-Other directories of note:
-
-* `assets/css/` - All generated and minified CSS lives here _do not edit directly_
-* `assets/img/` - where all theme and design graphics should go.
-* `assets/fonts/` - any font files should go here.
-
-#### Using Grunt
-The recommended way to use GruntJS for this project is to set up two "watch" instances where grunt will preprocess files on the fly as you save/add/remove them.
-
-* `grunt styles` - processes all SASS files into CSS, autoprefixes, and minifies. Watch task: `grunt watch:styles`
-* `grunt scripts` - processes all JS, concatinates and minifes into app.js, admin.js, head.js. Watch task: `grunt watch:scripts`
-* `grunt install` - runs bower tasks and the above two tasks to set the template up on intial load.
-* `grunt` - the default taks, runs `styles` and `scripts`.
-
-_Note: it's a good idea to turn off any watch tasks when merging branches as recompiling scripts and styles may cause conflicts in git_
-
-## favicons
-This theme doesn't come with any default favicons or touch icons. Generate them using [this generator](http://realfavicongenerator.net), and update the header.php code and place the files at the web root.
-
-## Bower
-Do you want to add a Javascript library? This is how you do it:
+## Markup & WordPress Templates
+* Try to avoid adding extra template files in the theme root.
+  * Reference included template files in `partials/`.
+  * If a partial is content, prefix the name with `content-`.
+  * If a partial is a module, prefix the name with `module-`.
+  * Get creative with other partial prefixes.
+* Keep `functions.php` relatively sparse.
+  * Instead, add things to the appropriate file in `includes/`.
 
 ## Post Types & Taxonomies
 All `.php` files in `post-types`, `taxonomies`, and `widgets` are automatically `require`d. If you install [WP-CLI](http://wp-cli.org/), you can quickly generate post types and taxonomies with the following commands, answering `Y` to `--theme` and `n` to `--raw`:
+
 * Post Types: `wp scaffold post-type --prompt`
 * Taxonomies: `wp scaffold taxonomy --prompt`
+
+## CSS & Sass
+* Active Sass development happens in `assets/css/src`.
+  * `assets/css` is for built files only. _Don’t edit these files directly_.
+* The `.scss` files in `assets/css/src` should represent the compiled `.css` files in `assets/css`.
+* If you need a new CSS file, create a new `.scss` file in `assets/css/src`, add it to the `sass:dist:files` block in `build/build-styles.js`, and make sure it is enqueued by `wp_enqueue_scripts` in `functions.php`, if necessary.
+
+## JavaScript
+* Active JavaScript development happens in `assets/js/src`.
+  * `assets/js` is for built files only. _Don’t edit these files directly_.
+* Each directory in `assets/js/src` should represent a compiled `.js` file in `assets/js`.
+* If you need a new JavaScript file, create a new directory in `assets/js/src`, add it to the `uglify:dist:files` block in `build/build-scripts.js`, and make sure it is enqueued by `wp_enqueue_scripts` in `functions.php`, if necessary.
+
+## Sourcemaps
+* Help keep `assets` cruft-free by making sure your Sourcemaps end up in `assets/maps`.
+
+## Using Grunt to build front-end assets
+Grunt build tasks are located in the `build` folder.
+
+There are three default Grunt tasks:
+
+* `install`: Install & process Bower dependencies.
+* `styles`: Process Sass files into CSS, run Autoprefixer to add vendor prefixes, and minify CSS with CSSNano.
+* `scripts`: Concatenate and minify script directories into compiled JS files.
+
+There is one optional Grunt task:
+
+* `watch`: Initialize a Browsersync server, and watch files for changes, processing them according to their file type. See Live development with Browsersync for more details.
+
+Additionally, `grunt.local.js` can be used to make any configuration changes specific to your local development environment. This file is ignored by Git.
+
+## Managing front-end dependencies with Bower
+External front-end dependencies are managed with [Bower](http://bower.io/). To add a dependency, run:
+
+`bower install <package> --save`
+
+It’s also a good idea to edit the `exportsOverride` block of `bower.json` to fine-tune the post processing of the new dependency.
+
+## Live development with Browsersync
+If you’ve installed Browsersync, running cross-browser live development and debugging is a cinch!
+
+Running `grunt watch` will do two things:
+
+* Run an instance of the Browsersync server. Take note of the IP addresses that are shown when you first run `grunt watch`.
+* Detect changes in theme source files (`.php`, `.scss`, `.js`) and process them accordingly:
+  * `.php`: Reload all Browsersync pages.
+  * `.scss`: Run `grunt styles` to process CSS. Changes are injected live to Browsersync pages once processing is complete.
+  * `.js`: Run `grunt scripts` to process JavaScript. Browsersync pages will reload once processing is complete.
+
+To stop `grunt watch` send an interrupt to the terminal (`^-C`).
+
+#####Troubleshooting
+* Make sure your `browserSync:dev:options:proxy` setting is correct. This should be your local development domain.
+* Sourcemaps messed up? Yeah, I haven’t figured out how to web inspectors to detect live-injected Sourcemap changes. `⌘-R` is your only hope.
+
+## Contributing
+Please make & submit changes to this!

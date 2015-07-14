@@ -1,16 +1,16 @@
 {
   "name": "generator-matter",
   "version": "0.1.0",
-  "description": "A WordPress theme Yeoman generator. Inspired by _s.",
+  "description": "A WordPress theme Yeoman generator. Inspired by _s & HTML5 Boilerplate.",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator", "wordpress", "_s"
   ],
   "license": "GPL-2.0",
   "main": "app/index.js",
-  "repository": "oknoway/matter",
+  "repository": "substancedev/matter",
   "author": {
     "name": "Nate Bedortha",
-    "email": "nate@oknoway.com",
+    "email": "nate@findsubstance.com",
     "url": "https://github.com/oknoway"
   },
   "scripts": {

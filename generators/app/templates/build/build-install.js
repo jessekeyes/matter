@@ -19,6 +19,4 @@ module.exports = function( grunt ) {
 
   // Install Dependencies.
   grunt.registerTask( 'install', [ 'bower' ] );
-
-  grunt.util.linefeed = '\n';
 };

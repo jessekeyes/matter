@@ -17,6 +17,7 @@ module.exports = function( grunt ) {
       css: '<%%= dirs.assets %>/css',
       sass: '<%%= dirs.css %>/src',
       js: '<%%= dirs.assets %>/js',
+      maps: '<%%= dirs.assets %>/maps',
       img: './img',
       vendor: '<%%= dirs.assets %>/vendor'
     }

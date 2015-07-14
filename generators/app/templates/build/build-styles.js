@@ -18,7 +18,6 @@ module.exports = function( grunt ) {
       options: {
         sourceMap: true,
         sourceMapContents: true,
-        sourceMapRoot: '<%%= dirs.maps %>',
         includePaths: [
           '<%%= dirs.sass %>/vendor',
           '<%%= dirs.vendor %>/scss'
@@ -35,6 +34,8 @@ module.exports = function( grunt ) {
     postcss: {
       options: {
         map: {
+          inline: false,
+          prev: false,
           annotation: '<%%= dirs.maps %>'
         },
         processors: [
