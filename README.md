@@ -23,9 +23,15 @@ Once you have NodeJS & NPM installed, all other requirements can be installed wi
 npm install -g bower browser-sync grunt-cli node-sass yo
 ```
 
-Then install the matter generator from NPM with:
+Clone the generator to the directory of your choosing:
 ```bash
-npm install -g https://github.com/substancedev/matter/tarball/master
+git clone git@github.com:substancedev/matter.git
+```
+
+`cd` into that directory and run:
+
+```bash
+npm link
 ```
 
 
