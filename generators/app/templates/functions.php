@@ -273,6 +273,12 @@ require get_template_directory() . '/includes/template-tags.php';
 
 
 /**
+ * Custom Queries.
+ */
+require get_template_directory() . '/includes/queries.php';
+
+
+/**
  * Custom filters.
  */
 require get_template_directory() . '/includes/filters.php';
