@@ -14,8 +14,8 @@ module.exports = function( grunt ) {
       dev: {
         bsFiles: {
           src: [
-            '<%%= dirs.css %>/*.min.css',
-            '<%%= dirs.js %>/*.min.js',
+            '<%%= dirs.css %>/*.css',
+            '<%%= dirs.js %>/*.js',
             '*.php',
             'includes/*.php',
             'partials/*.php'

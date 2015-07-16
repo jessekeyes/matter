@@ -38,6 +38,7 @@ yo matter
 
 Once installation is finished, `cd` to your new theme directory and run `grunt`.
 
+
 ## Post Types & Taxonomies
 This is a great time to add any custom post types and taxonomies. If you install [WP-CLI](http://wp-cli.org/), you can quickly generate post types and taxonomies with the following commands, answering `Y` to `--theme` and `n` to `--raw`:
 * Post Types: `wp scaffold post-type --prompt`
@@ -53,6 +54,7 @@ This is a great time to add any custom post types and taxonomies. If you install
   * Nav Menus
 * SubGenerators
   * neato
+
 
 ## Contributing
 Please fork, change and pull request!
