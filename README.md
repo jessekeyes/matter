@@ -23,15 +23,9 @@ Once you have NodeJS & NPM installed, all other requirements can be installed wi
 npm install -g bower browser-sync grunt-cli node-sass yo
 ```
 
-Clone the generator to the directory of your choosing:
+Install matter:
 ```bash
-git clone git@github.com:substancedev/matter.git
-```
-
-`cd` into that directory and run:
-
-```bash
-npm link
+npm install -g git+ssh://git@github.com:substancedev/matter.git
 ```
 
 
@@ -59,6 +53,25 @@ This is a great time to add any custom post types and taxonomies. If you install
   * Nav Menus
 * SubGenerators
   * neato
+
+## Contributing
+Please fork, change and pull request!
+
+To setup matter for development, first uninstall from matter from npm:
+```bash
+npm uninstall -g generator-matter
+```
+
+Clone the generator to the directory of your choosing (use your fork for the repo URL, if you have one):
+```bash
+git clone git@github.com:substancedev/matter.git
+```
+
+`cd` into that directory and run:
+
+```bash
+npm link
+```
 
 
 ## License
