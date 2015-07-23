@@ -18,7 +18,7 @@
       "scss": "app/assets/stylesheets"
     },
     "modernizr": {
-      "js": "modernizr.js"
+      "modernizr": "modernizr.js"
     },
     "responsive-nav": {
       "scss": "*.css",

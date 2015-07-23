@@ -27,7 +27,7 @@ module.exports = function( grunt ) {
       dist: {
         files: {
           '<%%= dirs.js %>/admin.js': [ '<%%= dirs.js %>/src/admin/**/*.js' ],
-          '<%%= dirs.js %>/head.js': [ '<%%= dirs.vendor %>/js/modernizr/modernizr.js', '<%%= dirs.js %>/src/head/**/*.js' ],
+          '<%%= dirs.js %>/head.js': [ '<%%= dirs.js %>/src/head/**/*.js' ],
           '<%%= dirs.js %>/<%= themeNameSpace %>.js': [ '<%%= dirs.js %>/src/<%= themeNameSpace %>/**/*.js' ]
         },
         options: {
@@ -49,7 +49,7 @@ module.exports = function( grunt ) {
     modernizr: {
       dist: {
         'devFile' : '<%%= dirs.vendor %>/js/modernizr/modernizr.js',
-        'outputFile' : '<%%= dirs.js %>/vendor/modernizr.custom.js',
+        'outputFile' : '<%%= dirs.js %>/head/modernizr.custom.js',
         'extra' : {
           'mq' : true,
           'cssclasses' : true,

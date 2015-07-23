@@ -15,8 +15,17 @@ module.exports = function( grunt ) {
         }
       }
     },
+    copy: {
+      js: {
+        expand: true,
+        flatten: true,
+        filter: 'isFile',
+        src: '<%%= dirs.vendor %>/js/**/*.js',
+        dest: '<%%= dirs.vendor %>/src/<%= themeNameSpace %>/'
+      }
+    },
   } );
 
   // Install Dependencies.
-  grunt.registerTask( 'install', [ 'bower' ] );
+  grunt.registerTask( 'install', [ 'bower', 'copy' ] );
 };

@@ -113,6 +113,9 @@ module.exports = yeoman.generators.Base.extend({
           name : 'grunt-bower-task',
           checked : true
         }, {
+          name : 'grunt-contrib-copy',
+          checked : true
+        }, {
           name : 'grunt-contrib-jshint',
           checked : true
         }, {
