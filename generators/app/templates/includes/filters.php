@@ -62,3 +62,35 @@ endif; // <%= themeNameSpace %>_post_class
 
 add_filter( 'post_class', '<%= themeNameSpace %>_post_class' );
 
+
+if ( ! function_exists( '<%= themeNameSpace %>_wp_nav_menu_args' ) ) :
+
+  /**
+   * Better defaults for wp_nav_menu
+   *
+   * @param $args (array)
+   *
+   * @return $args (array)
+   *
+   * @since 0.1.0
+   */
+
+  function <%= themeNameSpace %>_wp_nav_menu_args( $args = '' ) {
+    
+    // Always nav, never div
+    $args['container'] = 'nav';
+    $args['container_class'] = 'navigation-menu';
+
+    if ( 'Social' == $args['menu']->name ) :
+      
+      // Except for the social menu, because it's not navigation
+      $args['container'] = 'div';
+      
+    endif;
+  
+    return $args;
+  }
+  
+endif; // excerpt_length
+
+add_filter( 'wp_nav_menu_args', '<%= themeNameSpace %>_wp_nav_menu_args' );
