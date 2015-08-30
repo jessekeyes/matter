@@ -36,7 +36,7 @@ Grunt build tasks are located in the `build` folder.
 
 There are three default Grunt tasks:
 
-* `install`: Install & process Bower dependencies.
+* `install`: Install & process Bower dependencies. Copy files to appropriate directories
 * `styles`: Process Sass files into CSS, run Autoprefixer to add vendor prefixes, and minify CSS with CSSNano.
 * `scripts`: Concatenate and minify script directories into compiled JS files.
 
@@ -52,6 +52,8 @@ External front-end dependencies are managed with [Bower](http://bower.io/). To a
 `bower install <package> --save`
 
 It’s also a good idea to edit the `exportsOverride` block of `bower.json` to fine-tune the post processing of the new dependency.
+
+If you need to move files around, you should use the `copy` task, immediately after `bower`.
 
 ## Live development with Browsersync
 If you’ve installed Browsersync, running cross-browser live development and debugging is a cinch!

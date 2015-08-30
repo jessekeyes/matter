@@ -18,7 +18,10 @@ module.exports = function( grunt ) {
             '<%%= dirs.js %>/*.js',
             '*.php',
             'includes/*.php',
-            'partials/*.php'
+            'partials/*.php',
+            'post-types/*.php',
+            'taxonomies/*.php',
+            'widgets/*.php'
           ]
         },
         options: {
