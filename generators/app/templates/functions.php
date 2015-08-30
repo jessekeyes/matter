@@ -285,6 +285,12 @@ require get_template_directory() . '/includes/filters.php';
 
 
 /**
+ * Custom Sidebars.
+ */
+require get_template_directory() . '/includes/sidebars.php';
+
+
+/**
  * Utility functions.
  */
 require get_template_directory() . '/includes/utilities.php';
