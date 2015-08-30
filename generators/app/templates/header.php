@@ -14,7 +14,7 @@
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta http-equiv="X-UA-Compatible" content="IE=10;IE=9;IE=8;IE=7;IE=EDGE,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   
   <meta name="apple-mobile-web-app-title" content="<%= themeName %>" />
 
