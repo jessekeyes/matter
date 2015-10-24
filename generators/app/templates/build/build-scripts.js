@@ -48,7 +48,7 @@ module.exports = function( grunt ) {
     },
     modernizr: {
       dist: {
-        'devFile' : '<%= dirs.js %>/vendor/modernizr.js',
+        'devFile' : '<%%= dirs.js %>/vendor/modernizr.js',
         'outputFile' : '<%%= dirs.js %>/src/head/modernizr.custom.js',
         'extra' : {
           'mq' : true,
