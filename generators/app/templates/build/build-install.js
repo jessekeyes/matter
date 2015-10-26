@@ -20,15 +20,15 @@ module.exports = function( grunt ) {
         expand: true,
         flatten: true,
         filter: 'isFile',
-        src: '<%%= dirs.vendor %%>/modernizr/modernizr/modernizr.js',
-        dest: '<%%= dirs.js %%>/vendor/'
+        src: '<%%= dirs.vendor %>/modernizr/modernizr/modernizr.js',
+        dest: '<%%= dirs.js %>/vendor/'
       },
       head: {
         expand: true,
         flatten: true,
         filter: 'isFile',
-        src: '<%%= dirs.vendor %%>/head/**/*.js',
-        dest: '<%%= dirs.js %%>/src/head/'
+        src: '<%%= dirs.vendor %>/head/**/*.js',
+        dest: '<%%= dirs.js %>/src/head/'
       },
       js: {
         expand: true,
@@ -40,13 +40,13 @@ module.exports = function( grunt ) {
       scss: {
         expand: true,
         flatten: false,
-        cwd: '<%%= dirs.vendor %%>/scss',
+        cwd: '<%%= dirs.vendor %>/scss',
         src: '**',
-        dest: '<%%= dirs.sass %%>/vendor'
+        dest: '<%%= dirs.sass %>/vendor'
       }
     },
     clean: {
-      vendor: [ '<%%= dirs.vendor %%>' ]
+      vendor: [ '<%%= dirs.vendor %>' ]
     }
     
     

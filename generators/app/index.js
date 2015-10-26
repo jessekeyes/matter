@@ -99,7 +99,7 @@ module.exports = yeoman.generators.Base.extend({
           checked : true
         }, {
           name : 'autoprefixer',
-          value: 'autoprefixer-core grunt-autoprefixer grunt-postcss',
+          value: 'autoprefixer grunt-autoprefixer grunt-postcss',
           checked : true
         }, {
           name : 'grunt-browser-sync',
