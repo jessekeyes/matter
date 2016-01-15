@@ -17,16 +17,8 @@
     "neat": {
       "scss": "app/assets/stylesheets"
     },
-    "modernizr": {
-      "modernizr": "modernizr.js"
-    },
-    "responsive-nav": {
-      "scss": "*.css",
-      "js": "*.js"
-    },
     "fitvids": {
       "js": "jquery.fitvids.js"
     }
   }
 }
-
