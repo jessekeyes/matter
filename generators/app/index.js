@@ -140,7 +140,7 @@ module.exports = yeoman.generators.Base.extend({
         return val.join( ' ' ).split( ' ' );
 
       }
-      
+
     }, {
       type: 'checkbox',
       name: 'bowerDependencies',
@@ -154,12 +154,6 @@ module.exports = yeoman.generators.Base.extend({
           checked : true
         }, {
           name: 'neat',
-          checked : true
-        }, {
-          name: 'modernizr',
-          checked : true
-        }, {
-          name: 'responsive-nav',
           checked : true
         }, {
           name: 'fitvids',
@@ -223,70 +217,70 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath( '_gitignore' ),
         this.destinationPath( '.gitignore' )
       );
-      
+
       this.fs.move(
         this.destinationPath( 'scss-lint.yml' ),
         this.destinationPath( '.scss-lint.yml' )
       );
-      
+
       this.fs.move(
         this.destinationPath( 'jshintrc' ),
         this.destinationPath( '.jshintrc' )
       );
-      
+
       this.fs.move(
         this.destinationPath( 'README.md' ),
         this.destinationPath( 'README.md' )
       );
-      
+
       this.fs.move(
         this.destinationPath( '_package.json' ),
         this.destinationPath( 'package.json' )
       );
-      
+
       this.fs.move(
         this.destinationPath( '_bower.json' ),
         this.destinationPath( 'bower.json' )
       );
-      
+
       this.fs.move(
         this.destinationPath( 'assets/css/src/theme.scss' ),
         this.destinationPath( 'assets/css/src/' + this.props.themeNameSpace + '.scss' )
       );
-      
+
       this.fs.move(
         this.destinationPath( 'assets/js/src/theme/theme.js' ),
         this.destinationPath( 'assets/js/src/' + this.props.themeNameSpace + '/' + this.props.themeNameSpace + '.js' )
       );
 
     },
-    
+
     npmDependencies: function () {
-      
+
       for ( var i in this.props.npmDependencies ) {
-        
+
         this.npmInstall( [ this.props.npmDependencies[i] ], { 'saveDev': true } );
-        
+
       }
-      
+
     },
-    
+
     bowerDependencies: function () {
 
       for ( var i in this.props.bowerDependencies ) {
-        
+
         this.bowerInstall( [ this.props.bowerDependencies[i] ], { 'save': true } );
-        
+
       }
     }
   },
 
   install: function () {
-    
+
     this.log( yosay(
       'Looking good, pal! I’m about to install bunch of ' + chalk.bold.blue( 'npm' ) + ' & ' + chalk.bold.yellow( 'bower' ) + ' dependencies. This will take a while, so this is a good time to go make yourself a cup of ' + this.props.warmBeverage + ' that you are so famously fond of.'
     ));
-    
+
     this.installDependencies();
   }
 });

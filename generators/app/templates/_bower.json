@@ -8,7 +8,7 @@
     "lib"
   ],
   "exportsOverride": {
-    "wp-normalize-scss": {
+    "wp-normalize.scss": {
       "scss": "_wp-normalize.scss"
     },
     "bourbon": {
