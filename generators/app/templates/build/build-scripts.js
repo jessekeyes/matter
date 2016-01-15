@@ -36,7 +36,7 @@ module.exports = function( grunt ) {
             ' * Copyright (c) <%%= grunt.template.today("yyyy") %>;' +
             ' */\n',
           sourceMap: true,
-          sourceMapIncludeSources: true, 
+          sourceMapIncludeSources: true,
           sourceMapName: function( dest ) {
             return dest.replace( '/js/', '/maps/' ) + '.map';
           },
@@ -48,17 +48,28 @@ module.exports = function( grunt ) {
     },
     modernizr: {
       dist: {
-        'devFile' : '<%%= dirs.js %>/vendor/modernizr.js',
-        'outputFile' : '<%%= dirs.js %>/src/head/modernizr.custom.js',
-        'extra' : {
-          'mq' : true,
-          'cssclasses' : true,
-          'shiv' : true
-        },
-        'extensibility' : {},
-        'uglify' : false,
+        'parseFiles': true,
+        'customTests': [],
+        'devFile': '<%%= dirs.js %>/vendor/modernizr.js',
+        'dest': '<%%= dirs.js %>/src/head/_modernizr.custom.js',
+        'tests': [
+          'flexbox',
+          'flexboxlegacy',
+          'flexboxtweener'
+        ],
+        'excludeTests': [
+          'hidden'
+        ],
+        'options': [
+          'mq',
+          'setClasses'
+        ],
+        'uglify': false,
         'files' : {
-          src: [ '<%%= dirs.js %>/src/**/*.js', '<%%= dirs.sass %>/**/*.scss' ]
+          'src': [
+            '<%%= dirs.js %>/src/**/*.js',
+            '<%%= dirs.sass %>/**/*.scss'
+          ]
         }
       }
     },
