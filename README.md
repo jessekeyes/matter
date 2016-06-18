@@ -25,7 +25,7 @@ npm install -g bower browser-sync grunt-cli node-sass yo
 
 Install matter:
 ```bash
-npm install -g git+ssh://git@github.com:substancedev/matter.git
+npm install -g git+ssh://git@github.com:oknoway/matter.git
 ```
 
 
@@ -66,7 +66,7 @@ npm uninstall -g generator-matter
 
 Clone the generator to the directory of your choosing (use your fork for the repo URL, if you have one):
 ```bash
-git clone git@github.com:substancedev/matter.git
+git clone git@github.com:oknoway/matter.git
 ```
 
 `cd` into that directory and run:

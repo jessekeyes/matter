@@ -1,30 +1,31 @@
 {
-  "name": "generator-matter",
-  "version": "0.1.0",
-  "description": "A WordPress theme Yeoman generator. Inspired by _s & HTML5 Boilerplate.",
-  "keywords": [
-    "yeoman-generator", "wordpress", "_s"
+  "name" : "generator-matter",
+  "version" : "0.1.0",
+  "description" : "A WordPress theme Yeoman generator. Inspired by _s & HTML5 Boilerplate.",
+  "keywords" : [
+    "yeoman-generator", "wordpress", "_s", "HTML5", "sass", "grunt"
   ],
-  "license": "GPL-2.0",
-  "main": "app/index.js",
-  "repository": "substancedev/matter",
-  "author": {
-    "name": "Nate Bedortha",
-    "email": "nate@findsubstance.com",
-    "url": "https://github.com/oknoway"
+  "homepage" : "https://github.com/oknoway/matter",
+  "bugs" : {
+    "url" : "https://github.com/oknoway/matter/issues"
   },
+  "license" : "GPL-2.0",
+  "author" : "Nate Bedortha <nate@oknoway.com> (https://github.com/oknoway)",
+  "files" : [
+    "generators"
+  ],
+  "main" : "generators/app/index.js",
+  "repository" : "oknoway/matter",
   "scripts": {
     "test": "mocha"
   },
-  "files": [
-    "generators"
-  ],
-  "dependencies": {
-    "chalk": "^1.1.1",
-    "yeoman-generator": "^0.22.3",
-    "yosay": "^1.1.0"
+  "dependencies" : {
+    "chalk" : "^1.1.1",
+    "yeoman-generator" : "^0.22.3",
+    "yosay" : "^1.1.0"
   },
   "devDependencies": {
     "mocha": "*"
-  }
+  },
+  "private": true
 }

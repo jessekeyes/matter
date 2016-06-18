@@ -4,7 +4,7 @@ var path = require( 'path' );
 var chalk = require( 'chalk' );
 var yosay = require( 'yosay' );
 
-module.exports = yeoman.generators.Base.extend({
+module.exports = yeoman.Base.extend({
   prompting: function () {
     var done = this.async();
 
@@ -24,22 +24,21 @@ module.exports = yeoman.generators.Base.extend({
       message: 'Ok, I really just needed your name to fill out the Theme Author field. How’s this?',
       store: true,
       default: function( answers ) {
-        return answers.themeAuthorName + ' @ Substance';
+        return answers.themeAuthorName;
       }
     }, {
       type: 'input',
       name: 'themeAuthorEmail',
       message: 'Do you have an email address?',
-      store: true,
-      default: function( answers ) {
-        return answers.themeAuthorName.replace( /\W/g, '' ).toLowerCase() + '@findsubstance.com';
-      }
+      store: true
     }, {
       type: 'input',
       name: 'themeAuthorURI',
       store: true,
       message: 'And what is your website?',
-      default: 'http://www.findsubstance.com'
+      default: function( answers ) {
+        return 'https://github.com/' + answers.themeAuthorName.replace( /\W/g, '' ).toLowerCase();
+      }
     }, {
       type: 'input',
       name: 'themeName',
@@ -62,7 +61,9 @@ module.exports = yeoman.generators.Base.extend({
       type: 'input',
       name: 'themeDescription',
       message: 'How about a theme description?',
-      default: 'A theme of Substance.'
+      default: function( answers ) {
+        return 'A custom WordPress theme for ' + answers.themeName + '.';
+      }
     }, {
       type: 'input',
       name: 'localDomain',
@@ -75,14 +76,14 @@ module.exports = yeoman.generators.Base.extend({
       name: 'repoURL',
       message: 'Enter the git repo url',
       default: function( answers ) {
-        return 'git://github.com/substancedev/' + answers.themeNameSpace + '.git'
+        return 'https://github.com/' + answers.themeAuthorName.replace( /\W/g, '' ).toLowerCase() + '/' + answers.themeNameSpace + '.git';
       }
     }, {
       type: 'input',
       name: 'issuesURL',
-      message: 'And the Jira url',
+      message: 'And the Issues url',
       default: function( answers ) {
-        return 'https://substance.atlassian.net/projects/' + answers.themeNameSpace.toUpperCase();
+        return answers.repoURL + '/Issues';
       }
     }, {
       type: 'checkbox',
@@ -154,9 +155,6 @@ module.exports = yeoman.generators.Base.extend({
           checked : true
         }, {
           name: 'neat',
-          checked : true
-        }, {
-          name: 'fitvids',
           checked : true
         }
       ],
