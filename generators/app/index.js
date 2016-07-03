@@ -76,7 +76,7 @@ module.exports = yeoman.Base.extend({
       name: 'repoURL',
       message: 'Enter the git repo url',
       default: function( answers ) {
-        return 'https://github.com/' + answers.themeAuthorName.replace( /\W/g, '' ).toLowerCase() + '/' + answers.themeNameSpace + '.git';
+        return 'https://github.com/' + answers.themeAuthorName.replace( /\W/g, '' ).toLowerCase() + '/' + answers.themeNameSpace;
       }
     }, {
       type: 'input',
