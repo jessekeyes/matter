@@ -83,7 +83,7 @@ module.exports = yeoman.Base.extend({
       name: 'issuesURL',
       message: 'And the Issues url',
       default: function( answers ) {
-        return answers.repoURL + '/Issues';
+        return answers.repoURL + '/issues';
       }
     }, {
       type: 'checkbox',
