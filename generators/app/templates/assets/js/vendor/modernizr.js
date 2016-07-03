@@ -1,6 +1,6 @@
 /*!
- * modernizr v3.2.0
- * Build http://modernizr.com/download?-setclasses-dontmin
+ * modernizr v3.3.1
+ * Build https://modernizr.com/download?-setclasses-dontmin
  *
  * Copyright (c)
  *  Faruk Ates
@@ -39,7 +39,7 @@
 
   var ModernizrProto = {
     // The current version, dummy
-    _version: '3.2.0',
+    _version: '3.3.1',
 
     // Any settings that don't work as separate modules
     // can go in here as configuration.
