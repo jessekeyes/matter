@@ -19,32 +19,32 @@ if ( ! function_exists( 'get_all_the_terms' ) ):
    * @since 0.1.0
    */
   function get_all_the_terms( $post = 0 ) {
-    
+
     $post = get_post( $post );
-    
+
     if ( !$post )
       return false;
 
     $taxonomies = get_object_taxonomies( $post->post_type, 'objects' );
-    
+
     $output = array();
-    
+
     foreach ( $taxonomies as $taxonomy_slug => $taxonomy ) :
-      
+
       $terms = get_the_terms( $post->ID, $taxonomy_slug );
-      
+
       if ( !empty( $terms ) ) :
-        
+
         foreach ( $terms as $term ) :
-          
+
           $output[] = $term->name;
-          
+
         endforeach;
-        
+
       endif;
-      
+
     endforeach;
-    
+
     return $output;
   }
 
@@ -64,12 +64,12 @@ if ( ! function_exists( 'get_page_id_by_slug' ) ) :
 
   function get_page_id_by_slug( $slug ) {
     $page = get_page_by_path( $slug );
-    
+
     $id = ( !empty($page ) ) ? $page->ID : null;
-    
+
     return $id;
   }
-  
+
 endif; // get_page_id_by_slug
 
 
@@ -86,10 +86,10 @@ if ( ! function_exists( 'get_the_slug' ) ) :
    */
 
   function get_the_slug( $post ) {
-    
+
     if ( $post == null )
       global $post;
-    
+
     $slug = basename( get_permalink( $post ) );
 
     do_action('before_slug', $slug);
@@ -97,8 +97,18 @@ if ( ! function_exists( 'get_the_slug' ) ) :
     $slug = apply_filters('slug_filter', $slug);
 
     do_action('after_slug', $slug);
-    
+
     return $slug;
   }
-  
+
 endif; // get_the_slug
+
+function pre_printr( $output ) {
+
+   if ( empty( $output ) )
+    return;
+
+  echo '<pre>';
+  print_r( $output );
+  echo '</pre>';
+}
