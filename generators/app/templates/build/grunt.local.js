@@ -1,6 +1,6 @@
-'use strict';
-
 module.exports = function( grunt ) {
+  
+  'use strict';
 
   // Local project configuration
   grunt.config.merge( {

@@ -1,6 +1,6 @@
-'use strict';
-
 module.exports = function( grunt ) {
+  
+  'use strict';
 
   // Load all grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -34,5 +34,5 @@ module.exports = function( grunt ) {
   grunt.registerTask( 'default', [ 'install', 'styles', 'scripts' ] );
 
   grunt.util.linefeed = '\n';
-  
+
 };

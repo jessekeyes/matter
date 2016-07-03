@@ -1,6 +1,6 @@
-'use strict';
-
 module.exports = function( grunt ) {
+
+  'use strict';
 
   // Bower configuration
   grunt.config.merge( {
@@ -48,9 +48,9 @@ module.exports = function( grunt ) {
     clean: {
       vendor: [ '<%%= dirs.vendor %>' ]
     }
-    
-    
-    
+
+
+
   } );
 
   // Install Dependencies.
